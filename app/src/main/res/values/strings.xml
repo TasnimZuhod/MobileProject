@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Shopping</string>
+    <string name="title_home">Home</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_profile">Profile</string>
+    <string name="Or">OR</string>
+    <string name="Username">Email</string>
+    <string name="Password">Password</string>
+    <string name="Login"> Log in</string>
+    <string name="RegisterLbl">New User?</string>
+    <string name="Register">Create Now!</string>
+    <string name="MainTitle">Market Sections</string>
+    <string name="SectionTitle">Market Section</string>
+    <string name="Buy">Buy</string>
+    <string name="Confirm">Confirm</string>
+    <string name="ConvertCurrency">Convert Currency</string>
+    <string name="Registration">Registration</string>
+    <string name="RegistrationBtnLbl">CREATE ACCOUNT</string>
+    <string name="HaveAccount">have an account?</string>
+
+</resources>
