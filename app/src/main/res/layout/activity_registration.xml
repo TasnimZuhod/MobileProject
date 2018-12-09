@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="36dp"
-    tools:context=".LoginActivity"
+    tools:context=".RegistrationActivity"
     android:background="#fff"
     >
 
@@ -38,7 +38,7 @@
             android:paddingRight="5dp" />
 
         <EditText
-            android:id="@+id/Username"
+            android:id="@+id/Email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -88,7 +88,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <Button
-        android:id="@+id/LoginBTN"
+        android:id="@+id/RegisterBTN"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:text="@string/RegistrationBtnLbl"
@@ -97,7 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/PasswordLayout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:onClick="Login"
+        android:onClick="Register"
         android:background="@drawable/buttonshape"/>
 
 
@@ -127,6 +127,6 @@
             android:layout_marginTop="10dp"
             android:id="@+id/LoginBTN1"
             android:clickable="true"
-            android:onClick="Login"/>
+            android:onClick="LoginPage"/>
     </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

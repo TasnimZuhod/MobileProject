@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categories);
+        setContentView(R.layout.main_categories);
 
         mTextMessage = (TextView) findViewById(R.id.message);
         marketCategories = findViewById(R.id.listview);

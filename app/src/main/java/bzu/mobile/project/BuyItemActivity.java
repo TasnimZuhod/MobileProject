@@ -9,14 +9,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class SpecificItemActivity extends AppCompatActivity {
+public class BuyItemActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_specificitem);
+        setContentView(R.layout.buy_item);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
@@ -49,4 +49,5 @@ public class SpecificItemActivity extends AppCompatActivity {
 
     public void OnConfirmButtonClick(View view) {
     }
+
 }

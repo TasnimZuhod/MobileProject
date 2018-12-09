@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import bzu.mobile.project.SpecificItemActivity;
+import bzu.mobile.project.BuyItemActivity;
 import bzu.mobile.project.models.SectionItem;
 import bzu.mobile.project.R;
 
@@ -55,7 +55,7 @@ public class SectionItemsAdapter extends BaseAdapter {
         sectionImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, SpecificItemActivity.class));
+                context.startActivity(new Intent(context, BuyItemActivity.class));
             }
         });
         return myView;
