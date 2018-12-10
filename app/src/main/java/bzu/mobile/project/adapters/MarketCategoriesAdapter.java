@@ -50,13 +50,19 @@ public class MarketCategoriesAdapter extends BaseAdapter {
         AppCompatImageView categoryImage = myView.findViewById(R.id.category_img);
         AppCompatTextView categoryType = myView.findViewById(R.id.category_text);
 
+        final String categoryName = marketCategoriesList.get(i).getType();
+
         categoryImage.setImageDrawable(context.getResources().getDrawable(marketCategoriesList.get(i).getImgUrl()));
-        categoryType.setText(marketCategoriesList.get(i).getType());
+        categoryType.setText(categoryName);
 
         categoryImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, SectionActivity.class));
+                Intent intent = new Intent(context, SectionActivity.class);
+                intent.putExtra("CATEGORY_NAME", categoryName);
+                context.startActivity(intent);
+
+                //context.startActivity(new Intent(context, SectionActivity.class));
             }
         });
 

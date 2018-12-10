@@ -19,6 +19,7 @@
         android:id="@+id/itemImg">
 
         <ImageView
+            android:id="@+id/confirmImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/bag"
@@ -26,7 +27,7 @@
             android:layout_gravity="center" />
 
         <TextView
-            android:id="@+id/priceLabel"
+            android:id="@+id/confirmPriceLabel"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"

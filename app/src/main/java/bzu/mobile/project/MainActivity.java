@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         category2.setImgUrl(R.drawable.women);
 
         MarketCategory category3 = new MarketCategory();
-        category3.setType("Home & Garden");
-        category3.setImgUrl(R.drawable.home);
+        category3.setType("Shoes & Bags");
+        category3.setImgUrl(R.drawable.shoes_bags);
 
         MarketCategory category4 = new MarketCategory();
         category4.setType("Accessories");
@@ -51,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         category5.setImgUrl(R.drawable.kids);
 
         MarketCategory category6 = new MarketCategory();
-        category6.setType("Shoes & Bags");
-        category6.setImgUrl(R.drawable.shoes_bags);
+        category6.setType("Home & Garden");
+        category6.setImgUrl(R.drawable.home);
 
         marketCategoriesList.add(category1);
         marketCategoriesList.add(category2);

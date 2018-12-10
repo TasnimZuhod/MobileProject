@@ -7,11 +7,17 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class BuyItemActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
+    private ImageView itemImageView;
+    private TextView itemPriceLabel;
+    int imageID;
+    String price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,10 +25,21 @@ public class BuyItemActivity extends AppCompatActivity {
         setContentView(R.layout.buy_item);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        imageID= getIntent().getIntExtra("IMAGE_ID", -1);
+        price= getIntent().getStringExtra("PRICE");
+
+        itemImageView = (ImageView) findViewById(R.id.buyItemImg);
+        itemPriceLabel = (TextView) findViewById(R.id.buyItemPrice);
+
+        itemImageView.setImageResource(imageID);
+        itemPriceLabel.setText(price);
     }
 
     public void OnBuyButtonClick(View view) {
         Intent intent = new Intent(this, ConfirmationActivity.class);
+        intent.putExtra("IMAGE_ID", imageID);
+        intent.putExtra("PRICE", price);
         startActivity(intent);
     }
 

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.os.AsyncTask;
 import android.widget.Toast;
@@ -35,7 +36,11 @@ public class ConfirmationActivity extends AppCompatActivity {
 
     private static String url_convert_currency = "http://localhost/android_connect/test.php";
     private TextView mTextMessage;
-    private TextView priceLabel;
+    private ImageView confirmItemImgView;
+    private TextView confirmItemPriceLbl;
+    int imageID;
+    String price;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +49,14 @@ public class ConfirmationActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        priceLabel = (TextView) findViewById(R.id.priceLabel);
+        imageID= getIntent().getIntExtra("IMAGE_ID", -1);
+        price= getIntent().getStringExtra("PRICE");
+
+        confirmItemImgView = (ImageView) findViewById(R.id.confirmImageView);
+        confirmItemPriceLbl = (TextView) findViewById(R.id.confirmPriceLabel);
+
+        confirmItemImgView.setImageResource(imageID);
+        confirmItemPriceLbl.setText(price);
     }
 
     public void OnConfirmButtonClick(View view) {

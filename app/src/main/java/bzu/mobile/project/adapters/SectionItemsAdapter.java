@@ -49,13 +49,22 @@ public class SectionItemsAdapter extends BaseAdapter {
         ImageView sectionImage = myView.findViewById(R.id.section_img);
         TextView sectionPrice = myView.findViewById(R.id.section_price);
 
-        sectionImage.setImageDrawable(context.getResources().getDrawable(SectionList.get(i).getImgUrl()));
-        sectionPrice.setText(SectionList.get(i).getPrice());
+        final int imageUrl = SectionList.get(i).getImgUrl();
+        final String price = SectionList.get(i).getPrice();
+
+        sectionImage.setImageDrawable(context.getResources().getDrawable(imageUrl));
+        sectionPrice.setText(price);
+
 
         sectionImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                context.startActivity(new Intent(context, BuyItemActivity.class));
+                Intent intent = new Intent(context, BuyItemActivity.class);
+                intent.putExtra("IMAGE_ID", imageUrl);
+                intent.putExtra("PRICE", price);
+                context.startActivity(intent);
+
+                //context.startActivity(new Intent(context, BuyItemActivity.class));
             }
         });
         return myView;
