@@ -64,12 +64,13 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:id="@+id/convertedPrice"
             android:layout_height="30dp"
             android:paddingLeft="20dp"
             android:paddingTop="5dp"
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
-            android:text="55"
+            android:text="₪"
             android:background="#e1e1e1"
             android:textColor="@color/TextColor"
             android:textSize="16dp"
