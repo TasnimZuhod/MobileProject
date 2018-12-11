@@ -51,6 +51,7 @@ public class SectionItemsAdapter extends BaseAdapter {
 
         final int imageUrl = SectionList.get(i).getImgUrl();
         final String price = SectionList.get(i).getPrice();
+        final String description = SectionList.get(i).getDescription();
 
         sectionImage.setImageDrawable(context.getResources().getDrawable(imageUrl));
         sectionPrice.setText(price);
@@ -62,6 +63,7 @@ public class SectionItemsAdapter extends BaseAdapter {
                 Intent intent = new Intent(context, BuyItemActivity.class);
                 intent.putExtra("IMAGE_ID", imageUrl);
                 intent.putExtra("PRICE", price);
+                intent.putExtra("DESCRIPTION", description);
                 context.startActivity(intent);
 
                 //context.startActivity(new Intent(context, BuyItemActivity.class));

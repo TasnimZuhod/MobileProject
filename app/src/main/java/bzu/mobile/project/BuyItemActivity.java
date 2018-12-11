@@ -16,8 +16,10 @@ public class BuyItemActivity extends AppCompatActivity {
     private TextView mTextMessage;
     private ImageView itemImageView;
     private TextView itemPriceLabel;
+    private TextView itemDescLabel;
     int imageID;
     String price;
+    String description;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +30,15 @@ public class BuyItemActivity extends AppCompatActivity {
 
         imageID= getIntent().getIntExtra("IMAGE_ID", -1);
         price= getIntent().getStringExtra("PRICE");
+        description= getIntent().getStringExtra("DESCRIPTION");
 
         itemImageView = (ImageView) findViewById(R.id.buyItemImg);
         itemPriceLabel = (TextView) findViewById(R.id.buyItemPrice);
+        itemDescLabel = (TextView) findViewById(R.id.buyItemDesc);
 
         itemImageView.setImageResource(imageID);
         itemPriceLabel.setText(price);
+        itemDescLabel.setText(description);
     }
 
     public void OnBuyButtonClick(View view) {

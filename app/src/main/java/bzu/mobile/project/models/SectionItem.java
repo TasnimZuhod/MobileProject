@@ -4,6 +4,7 @@ public class SectionItem {
 
     private Integer imgUrl;
     private String price;
+    private String description;
 
     public Integer getImgUrl() {
         return imgUrl;
@@ -19,5 +20,13 @@ public class SectionItem {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
