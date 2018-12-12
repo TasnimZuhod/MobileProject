@@ -8,44 +8,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
-public class BuyItemActivity extends AppCompatActivity {
+import bzu.mobile.project.dbHandler.MyDBHandler;
+import bzu.mobile.project.dbModels.User;
 
-    private TextView mTextMessage;
-    private ImageView itemImageView;
-    private TextView itemPriceLabel;
-    private TextView itemDescLabel;
-    int imageID;
-    String price;
-    String description;
+public class UserprofileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.buy_item);
+        setContentView(R.layout.activity_userprofile);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-        imageID= getIntent().getIntExtra("IMAGE_ID", -1);
-        price= getIntent().getStringExtra("PRICE");
-        description= getIntent().getStringExtra("DESCRIPTION");
-
-        itemImageView = (ImageView) findViewById(R.id.buyItemImg);
-        itemPriceLabel = (TextView) findViewById(R.id.buyItemPrice);
-        itemDescLabel = (TextView) findViewById(R.id.buyItemDesc);
-
-        itemImageView.setImageResource(imageID);
-        itemPriceLabel.setText(price);
-        itemDescLabel.setText(description);
-    }
-
-    public void OnBuyButtonClick(View view) {
-        Intent intent = new Intent(this, ConfirmationActivity.class);
-        intent.putExtra("IMAGE_ID", imageID);
-        intent.putExtra("PRICE", price);
-        startActivity(intent);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -70,8 +45,5 @@ public class BuyItemActivity extends AppCompatActivity {
         }
     };
 
-
-    public void OnConfirmButtonClick(View view) {
-    }
 
 }
