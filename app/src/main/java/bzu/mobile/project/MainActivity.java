@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         marketCategories.setAdapter(marketCategoriesAdpater);
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        //navigation.setBehaviorTranslationEnabled(true);
+        navigation.getMenu().getItem(0).setChecked(true);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -79,11 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     return true;
-                case R.id.navigation_dashboard:
-                    intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_profile:
                     intent = new Intent(getApplicationContext(), UserprofileActivity.class);
                     startActivity(intent);
                     return true;

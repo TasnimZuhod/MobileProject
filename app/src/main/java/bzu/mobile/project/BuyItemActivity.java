@@ -57,11 +57,7 @@ public class BuyItemActivity extends AppCompatActivity {
                     intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     return true;
-                case R.id.navigation_dashboard:
-                    intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_profile:
                     intent = new Intent(getApplicationContext(), UserprofileActivity.class);
                     startActivity(intent);
                     return true;

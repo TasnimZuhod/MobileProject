@@ -21,6 +21,7 @@ public class UserprofileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_userprofile);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.getMenu().getItem(2).setChecked(true);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -32,11 +33,7 @@ public class UserprofileActivity extends AppCompatActivity {
                     intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     return true;
-                case R.id.navigation_dashboard:
-                    intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
-                    return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_profile:
                     intent = new Intent(getApplicationContext(), UserprofileActivity.class);
                     startActivity(intent);
                     return true;
@@ -46,4 +43,8 @@ public class UserprofileActivity extends AppCompatActivity {
     };
 
 
+    public void Logout(View view) {
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+    }
 }

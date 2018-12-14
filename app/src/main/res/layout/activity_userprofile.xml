@@ -49,6 +49,7 @@
         app:layout_constraintTop_toBottomOf="@+id/User"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:onClick="Logout"
         android:background="@drawable/buttonshape"/>
 
     <android.support.design.widget.BottomNavigationView
