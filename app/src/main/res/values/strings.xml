@@ -11,7 +11,9 @@
     <string name="Register">Create Now!</string>
     <string name="MainTitle">Market Sections</string>
     <string name="SectionTitle">Market Section</string>
-    <string name="Buy">Buy</string>
+    <string name="CartTitle">Cart Items</string>
+    <string name="Buy">Buy Now</string>
+    <string name="AddToCart">Add to Cart</string>
     <string name="Confirm">Confirm</string>
     <string name="ConvertCurrency">Convert Currency</string>
     <string name="Registration">Registration</string>

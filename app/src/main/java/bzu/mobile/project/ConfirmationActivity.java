@@ -61,6 +61,10 @@ public class ConfirmationActivity extends AppCompatActivity {
                     intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     return true;
+                case R.id.navigation_cart:
+                    intent = new Intent(getApplicationContext(), CartActivity.class);
+                    startActivity(intent);
+                    return true;
                 case R.id.navigation_profile:
                     intent = new Intent(getApplicationContext(), UserprofileActivity.class);
                     startActivity(intent);

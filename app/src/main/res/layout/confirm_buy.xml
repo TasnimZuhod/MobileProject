@@ -42,40 +42,40 @@
     </FrameLayout>
 
     <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/itemImg"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="30dp"
-        android:id="@+id/desc"
-        android:gravity="center">
+        app:layout_constraintTop_toBottomOf="@+id/itemImg">
 
         <Button
             android:id="@+id/ConvertBTN"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="@string/ConvertCurrency"
-            android:paddingRight="20dp"
-            android:paddingLeft="20dp"
-            android:textColor="@color/TextColor"
             android:onClick="ConvertCurrecny"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/ConvertCurrency"
+            android:textColor="@color/TextColor"
             app:layout_constraintRight_toLeftOf="parent" />
 
         <TextView
-            android:layout_width="wrap_content"
             android:id="@+id/convertedPrice"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
+            android:background="#e1e1e1"
             android:paddingLeft="20dp"
             android:paddingTop="5dp"
             android:paddingRight="20dp"
             android:paddingBottom="5dp"
             android:text="₪"
-            android:background="#e1e1e1"
+            android:textAlignment="center"
             android:textColor="@color/TextColor"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:textAlignment="center" />
+            android:textStyle="bold" />
     </android.support.v7.widget.LinearLayoutCompat>
 
     <Button

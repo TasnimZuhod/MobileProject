@@ -5,23 +5,56 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import bzu.mobile.project.adapters.CartItemsAdapter;
+import bzu.mobile.project.adapters.SectionItemsAdapter;
 import bzu.mobile.project.dbHandler.MyDBHandler;
-import bzu.mobile.project.dbModels.User;
+import bzu.mobile.project.dbModels.CartItem;
+import bzu.mobile.project.models.SectionItem;
 
-public class UserprofileActivity extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class CartActivity extends AppCompatActivity {
+
+    private TextView mTextMessage;
+    private GridView cartGrid;
+    private TextView sectionTitle;
+    ArrayList<CartItem> selectedItemsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_userprofile);
+        setContentView(R.layout.activity_cart);
+
+        cartGrid = findViewById(R.id.cartGrid);
+        sectionTitle = findViewById(R.id.CartTitleTxtView);
+
+        selectedItemsList = new ArrayList<>();
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+
+        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+
+        //dbHandler.deleteCartItems();
+        selectedItemsList = dbHandler.getCartItems();
+
+        Toast.makeText(this, selectedItemsList.size()+"", Toast.LENGTH_LONG).show();
+
+        CartItemsAdapter cartListAdpater = new CartItemsAdapter(selectedItemsList,this);
+        cartGrid.setAdapter(cartListAdpater);
+
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        navigation.getMenu().getItem(2).setChecked(true);
+        navigation.getMenu().getItem(1).setChecked(true);
+    }
+
+    public void onCardConfirmBtnClick(View view) {
+        Toast.makeText(this, "Done !", Toast.LENGTH_LONG).show();
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -45,10 +78,4 @@ public class UserprofileActivity extends AppCompatActivity {
             return false;
         }
     };
-
-
-    public void Logout(View view) {
-        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-        startActivity(intent);
-    }
 }

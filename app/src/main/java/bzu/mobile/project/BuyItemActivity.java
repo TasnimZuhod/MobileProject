@@ -10,6 +10,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import bzu.mobile.project.dbHandler.MyDBHandler;
+import bzu.mobile.project.dbModels.CartItem;
+import bzu.mobile.project.dbModels.User;
 
 public class BuyItemActivity extends AppCompatActivity {
 
@@ -48,6 +53,15 @@ public class BuyItemActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void OnAddToCartButtonClick(View view){
+        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+        Integer itemImageID = imageID;
+        String itemPrice = price;
+        CartItem cartItem = new CartItem(itemImageID, itemPrice);
+        dbHandler.addCartItem(cartItem);
+        Toast.makeText(this, "Added successfully!", Toast.LENGTH_LONG).show();
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -55,6 +69,10 @@ public class BuyItemActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.navigation_cart:
+                    intent = new Intent(getApplicationContext(), CartActivity.class);
                     startActivity(intent);
                     return true;
                 case R.id.navigation_profile:
