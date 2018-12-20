@@ -8,18 +8,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import bzu.mobile.project.dbHandler.MyDBHandler;
 import bzu.mobile.project.dbModels.User;
 
 public class UserprofileActivity extends AppCompatActivity {
 
+    TextView userName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userprofile);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        userName = (TextView) findViewById(R.id.usernameLabel);
+        //userName.setText();
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.getMenu().getItem(2).setChecked(true);
     }

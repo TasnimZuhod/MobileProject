@@ -84,24 +84,23 @@
 
         <Button
             android:id="@+id/BuyNowBTN"
-            android:layout_width="140dp"
+            android:layout_width="120dp"
             android:layout_height="35dp"
             android:background="@drawable/buttonshape"
             android:onClick="OnBuyButtonClick"
             android:text="@string/Buy"
             android:textColor="#fff"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
             app:layout_constraintLeft_toLeftOf="parent"/>
 
         <Button
             android:id="@+id/AddToCartBTN"
-            android:layout_width="140dp"
+            android:layout_width="120dp"
             android:layout_height="35dp"
             android:background="@drawable/buttonshape"
             android:onClick="OnAddToCartButtonClick"
             android:text="@string/AddToCart"
             android:textColor="#fff"
+            android:layout_marginLeft="10dp"
             app:layout_constraintLeft_toLeftOf="parent" />
 
     </android.support.v7.widget.LinearLayoutCompat>
