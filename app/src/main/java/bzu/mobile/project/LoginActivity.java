@@ -13,15 +13,17 @@ import bzu.mobile.project.dbModels.User;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText emailBox;
+    EditText usernameBox;
     EditText passwordBox;
+
+    public static String username = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        emailBox = (EditText) findViewById(R.id.LoginEmail);
+        usernameBox = (EditText) findViewById(R.id.LoginEmail);
         passwordBox = (EditText) findViewById(R.id.LoginPassword);
     }
 
@@ -31,18 +33,23 @@ public class LoginActivity extends AppCompatActivity {
         String res = dbHandler.loadHandler();
         Toast.makeText(this, res, Toast.LENGTH_LONG).show();
 
-        String email = emailBox.getText().toString();
+        username = usernameBox.getText().toString();
         String password = passwordBox.getText().toString();
 
-        User user = dbHandler.findUser(email);
+        User user = dbHandler.findUser(username);
 
         if(user != null) {
-            Toast.makeText(this, "SUCCESS", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            if(!user.getUserPassword().equals(password)) {
+                Toast.makeText(this, "Incorrect Password", Toast.LENGTH_LONG).show();
+            }
+            else {
+                Toast.makeText(this, "SUCCESS", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+            }
         }
         else {
-            Toast.makeText(this, "Incorrect email or password", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Incorrect Username", Toast.LENGTH_LONG).show();
         }
 
     }

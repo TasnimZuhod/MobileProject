@@ -35,6 +35,45 @@
         android:paddingBottom="104dp"
          />
 
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navigation">
+
+    <Button
+        android:id="@+id/ConvertBTNCart"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:onClick="ConvertCurrecny"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="@string/ConvertCurrency"
+        android:textColor="#fff"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:background="@drawable/buttonshape"/>
+
+    <TextView
+        android:id="@+id/convertedPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="#e1e1e1"
+        android:paddingLeft="20dp"
+        android:paddingTop="5dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="5dp"
+        android:text="₪"
+        android:textAlignment="center"
+        android:textColor="@color/TextColor"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
     <Button
         android:id="@+id/ConfirmBTN"
         android:layout_width="wrap_content"

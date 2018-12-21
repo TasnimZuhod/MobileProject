@@ -25,7 +25,7 @@ public class UserprofileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_userprofile);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         userName = (TextView) findViewById(R.id.usernameLabel);
-        //userName.setText();
+        userName.setText(LoginActivity.username);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.getMenu().getItem(2).setChecked(true);
     }
