@@ -32,18 +32,19 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Sections"
-        android:paddingBottom="104dp"
+        android:paddingBottom="160dp"
          />
 
     <android.support.v7.widget.LinearLayoutCompat
         android:id="@+id/desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="10dp"
+
         android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/navigation">
+        app:layout_constraintBottom_toTopOf="@+id/ConfirmBTN">
 
     <Button
         android:id="@+id/ConvertBTNCart"
